@@ -50,19 +50,19 @@
     <form id="form-fornecedor" class="bg-white p-4 rounded shadow-sm">
       <div class="mb-3">
         <label for="nomeFornecedor" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nomeFornecedor" required>
+        <input type="text" id="nome" name="nome" class="form-control" required>
       </div>
       <div class="mb-3">
         <label for="cnpj" class="form-label">CNPJ</label>
-        <input type="text" class="form-control" id="cnpj" required>
+        <input type="text" id="cnpj" name="cnpj" class="form-control" required>
       </div>
       <div class="mb-3">
         <label for="telefone" class="form-label">Telefone</label>
-        <input type="text" class="form-control" id="telefone" required>
+      <input type="text" id="telefone" name="telefone" class="form-control" required>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" required>
+        <input type="email" id="email" name="email" class="form-control" required>
       </div>
       <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
       <div id="mensagem" class="mt-3 text-success"></div>
@@ -70,9 +70,9 @@
   </main>
 
   <footer class="text-center mt-5 py-3 text-muted">
-    © 2025 Comercial Alfa — Sistema de Gestão Web
+    © 2025 Comercial Alfa — Todos os direitos reservados.
   </footer>
 
-  <script src="/js/app.js"></script>
+  <script src="../app.js"></script>
 </body>
 </html>
