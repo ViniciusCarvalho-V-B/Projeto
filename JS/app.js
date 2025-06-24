@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (path.includes('consultar-pedidos.html')) initConsultaPedidos();
 });
 
-// Banco de dados SIMULADO (em memória)
 const db = {
   produtos: [
     { id: 1, nome: "Notebook", descricao: "Dell Inspiron 15", preco: 3500, quantidade: 10 },
@@ -32,11 +31,9 @@ function mostrarMensagem(mensagem, tipo, elementoId = 'mensagem') {
   `;
 }
 
-// Validações
 function validarCNPJ(cnpj) {
   cnpj = cnpj.replace(/[^\d]+/g, '');
   if (cnpj.length !== 14) return false;
-  // Validação simplificada (para frontend)
   return true;
 }
 
@@ -134,8 +131,6 @@ function initCriarPedido() {
   const form = document.getElementById('form-pedido');
   if (!form) return;
 
-  // Preenche dropdowns (código anterior...)
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const produtoId = parseInt(form.produto.value);
@@ -165,7 +160,6 @@ function initCriarPedido() {
       return;
     }
 
-    // Simulação de sucesso
     mostrarMensagem('✅ Pedido criado com sucesso!', 'success', 'mensagem');
     form.reset();
   });
