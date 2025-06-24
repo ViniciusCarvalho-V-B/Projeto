@@ -7,83 +7,61 @@
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow">
     <div class="container">
-      <a class="navbar-brand fw-bold text-white" href="../index.html">Comercial Alfa</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav"
-              aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand fw-bold" href="../index.html">Comercial Alfa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto text-center">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cadastrar-produto.html">Cadastrar Produto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cadastrar-fornecedor.html">Cadastrar Fornecedor</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="criar-pedido.html">Criar Pedido</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="consultar-pedidos.html">Consultar Pedido</a>
-          </li>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastrar-produto.html">Cadastrar Produto</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastrar-fornecedor.html">Cadastrar Fornecedor</a></li>
+          <li class="nav-item"><a class="nav-link" href="criar-pedido.html">Criar Pedido</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Consultar Pedido</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="hero-sm text-center  py-4">
-    <h1 class="display-5">Consultar Pedidos</h1>
-    <p class>Visualize e filtre os pedidos cadastrados</p>
-  </header>
-
   <main class="container my-5">
-    <form id="form-filtro" class="row g-3 mb-4 bg-white p-4 rounded shadow-sm">
-      <div class="col-md-4">
-        <label class="form-label">Data</label>
-        <input type="date" class="form-control" name="data">
+<h2 class="text-center mb-4">Consultar Pedidos</h2>
+<div id="mensagem-consulta" class="mb-4"></div> <!-- Novo elemento para mensagens -->
+    <form id="form-filtro" class="row g-3 justify-content-center mb-4">
+      <div class="col-md-3">
+        <input type="date" name="data" class="form-control" placeholder="Data">
       </div>
-      <div class="col-md-4">
-        <label class="form-label">Produto</label>
-        <input type="text" class="form-control" name="produto" placeholder="Nome do produto">
+      <div class="col-md-3">
+        <select name="produto" class="form-select" id="filtro-produto">
+          <option value="">Selecione o Produto</option>
+        </select>
       </div>
-      <div class="col-md-4">
-        <label class="form-label">Fornecedor</label>
-        <input type="text" class="form-control" name="fornecedor" placeholder="Nome do fornecedor">
+      <div class="col-md-3">
+        <select name="fornecedor" class="form-select" id="filtro-fornecedor">
+          <option value="">Selecione o Fornecedor</option>
+        </select>
       </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary w-100">Filtrar Pedidos</button>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">Filtrar</button>
       </div>
     </form>
 
-    <div class="table-responsive bg-white p-3 rounded shadow-sm">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Produto</th>
-            <th>Fornecedor</th>
-            <th>Quantidade</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-pedidos">
-          <!-- Preenchido dinamicamente -->
-        </tbody>
-      </table>
-    </div>
+    <table class="table table-bordered table-striped bg-white rounded shadow">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Produto</th>
+          <th>Fornecedor</th>
+          <th>Quantidade</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-pedidos"></tbody>
+    </table>
   </main>
 
-  <footer class="text-center mt-5 py-3 text-muted">
-    © 2025 Comercial Alfa — Todos os direitos reservados.
-  </footer>
-
-  <script src="../app.js"></script>
+  <script src="../JS/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
